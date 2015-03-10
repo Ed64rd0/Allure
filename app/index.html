@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="allure">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Allure Eventos</title>
+
+    <!-- CSS -->
+    <link type="text/css" href="libs/bootstrap/css/bootstrap.css" />
+
+    <!-- JS -->
+    <script type="text/javascript" src="libs/angular/angular.js"></script>
+    <script type="text/javascript" src="libs/angular/angular-route.js"></script>
+    <script type="text/javascript" src="libs/angular/angular-resource.js"></script>
+    <script type="text/javascript" src="libs/jquery/jquery.js"></script>
+    <script type="text/javascript" src="libs/bootstrap/js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="js/module/app.js"></script>
+    <script type="text/javascript" src="js/AllureCtrl.js"></script>
+    <script type="text/javascript" src="js/supplier/SupplierCtrl.js"></script>
+    <script type="text/javascript" src="js/supplier/supplier-service.js"></script>
+
+</head>
+<body ng-controller="AllureCtrl">
+
+    <div id="allure-header">
+
+    </div>
+
+    <div ng-view></div>
+
+    <div id="allure-footer">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# Intellij
+.idea/
+*.iws
+*.iml
+*.ipr
+app/libs/
