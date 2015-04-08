@@ -5,7 +5,8 @@
     <title>Allure Eventos</title>
 
     <!-- CSS -->
-    <link type="text/css" href="libs/bootstrap/css/bootstrap.css" />
+    <link href="libs/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="css/allure.css" rel="stylesheet" />
 
     <!-- JS -->
     <script type="text/javascript" src="libs/angular/angular.js"></script>
@@ -16,20 +17,41 @@
 
     <script type="text/javascript" src="module/app.js"></script>
     <script type="text/javascript" src="allure/AllureCtrl.js"></script>
+    <script type="text/javascript" src="allure/allure-service.js"></script>
     <script type="text/javascript" src="supplier/SupplierCtrl.js"></script>
+    <script type="text/javascript" src="event/EventsCtrl.js"></script>
+    <script type="text/javascript" src="customer/CustomerCtrl.js"></script>
 
 
 </head>
 <body ng-controller="AllureCtrl">
 
     <div id="allure-header">
-
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <h2>Allure Eventos</h2>
+            </div>
+        </nav>
     </div>
 
-    <div ng-view></div>
+    <div id="left-menu">
+        <ul class="nav nav-pills nav-stacked">
+            <li ng-repeat="option in navOptions" ng-class="{active: option.label === activeOption}">
+                <a href="#{{option.nav}}" ng-click="changeMenu(option.label)">
+                    <span ng-class="option.icon" aria-hidden="true"> {{option.label}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div ng-view id="allure-content"></div>
 
     <div id="allure-footer">
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container">
 
+            </div>
+        </nav>
     </div>
 </body>
 </html>

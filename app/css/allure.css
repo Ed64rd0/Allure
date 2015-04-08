@@ -1,0 +1,17 @@
+#left-menu {
+    width: 200px;
+    float: left;
+    margin-left: 25px;
+}
+#allure-content {
+    margin-left: 250px;
+    margin-right: 25px;
+}
+#options {
+
+    float: right;
+    margin-right: 25px;
+}
+#delete {
+    margin-left: 5px;
+}
