@@ -1,5 +1,5 @@
 var allure = angular.module('allureApp', ['ngRoute', 'allureCtrl', 'supplierCtrl', 'eventsCtrl',
-    'customerCtrl', 'AllureService']);
+    'customerCtrl', 'stockCtrl', 'AllureService']);
 
 allure.config(['$routeProvider', function($routeProvider) {
     $routeProvider.
@@ -11,11 +11,16 @@ allure.config(['$routeProvider', function($routeProvider) {
             controller: 'SupplierCtrl'
         }).
         when('/eventos', {
-            templateUrl: 'event/events.html'
+            templateUrl: 'event/events.html',
+            controller: 'EventsCtrl'
         }).
         when('/clientes', {
             templateUrl: 'customer/customers.html',
             controller: 'CustomerCtrl'
+        }).
+        when('/inventario', {
+            templateUrl: 'stock/stock.html',
+            controller: 'StockCtrl'
         }).
         otherwise({
             redirectTo: '/home'

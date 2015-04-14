@@ -1,7 +1,7 @@
 var allureService = angular.module('AllureService', ['ngResource']);
 
-allureService.factory('GetMenu', ['$resource', function($resource) {
-    //return $resource('localhost:8080/allure/menu', {}, {
-  //     get: {method:'GET', params: {}, isArray:true}
-//    });
+allureService.factory('StartApp', ['$resource', function($resource) {
+    return $resource('http://localhost:8080/allureWeb/allure/application', {}, {
+       get: {method:'GET', params: {}, isArray:false}
+    });
 }]);
