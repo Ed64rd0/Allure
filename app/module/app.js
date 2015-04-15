@@ -1,5 +1,5 @@
 var allure = angular.module('allureApp', ['ngRoute', 'allureCtrl', 'supplierCtrl', 'eventsCtrl',
-    'customerCtrl', 'stockCtrl', 'AllureService']);
+    'customerCtrl', 'stockCtrl', 'AllureService', 'SupplierService']);
 
 allure.config(['$routeProvider', function($routeProvider) {
     $routeProvider.

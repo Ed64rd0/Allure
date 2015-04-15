@@ -19,6 +19,7 @@
     <script type="text/javascript" src="allure/AllureCtrl.js"></script>
     <script type="text/javascript" src="allure/allure-service.js"></script>
     <script type="text/javascript" src="supplier/SupplierCtrl.js"></script>
+    <script type="text/javascript" src="supplier/supplier-service.js"></script>
     <script type="text/javascript" src="event/EventsCtrl.js"></script>
     <script type="text/javascript" src="customer/CustomerCtrl.js"></script>
     <script type="text/javascript" src="stock/StockCtrl.js"></script>
@@ -37,8 +38,8 @@
 
     <div id="left-menu">
         <ul class="nav nav-pills nav-stacked">
-            <li ng-repeat="option in application.menu" ng-class="{active: option.label === activeOption}">
-                <a href="#{{option.nav}}" ng-click="changeMenu(option.label)">
+            <li ng-repeat="option in application.menu" ng-class="{active: option.nav === activeOption}">
+                <a href="#{{option.nav}}" ng-click="changeMenu(option.nav)">
                     <span ng-class="option.icon" aria-hidden="true"> {{option.label}}</span>
                 </a>
             </li>

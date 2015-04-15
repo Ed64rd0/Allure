@@ -1,6 +1,10 @@
 var supplierCtrl = angular.module('supplierCtrl', []);
 
-supplierCtrl.controller('SupplierCtrl', ['$scope', function($scope){
+supplierCtrl.controller('SupplierCtrl', ['$scope', 'Suppliers', function($scope, Suppliers){
 
-    $scope.test = 1;
+    $scope.init = function() {
+        $scope.suppliers = Suppliers.get();
+    };
+
+    $scope.init();
 }]);

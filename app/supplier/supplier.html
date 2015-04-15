@@ -16,42 +16,25 @@
         <thead
             <tr>
                 <th class="col-md-1"></th>
-                <th class="col-md-6">Nombre</th>
+                <th class="col-md-5">Nombre</th>
                 <th class="col-md-2">Telefono</th>
                 <th class="col-md-5">Email</th>
                 <th class="col-md-1"></th>
             </tr>
         </thead>
         <tbody>
-            <tr >
+            <tr ng-repeat="supplier in suppliers">
                 <td class="col-md-1">
                     <input type="checkbox" />
                 </td>
-                <td class="col-md-6">
-                    <a href="#">Hola </a>
+                <td class="col-md-5">
+                    <a href="#">{{supplier.name }} {{supplier.lastName }} {{supplier.scndLstName }} </a>
                 </td>
                 <td class="col-md-2">
-
+                    {{supplier.celPhone }}
                 </td>
                 <td class="col-md-5">
-
-                </td>
-                <td class="col-md-1">
-                    <a href="#" > <span class="glyphicon  glyphicon-trash" aria-hidden="true"></span></a>
-                </td>
-            </tr>
-            <tr >
-                <td class="col-md-1">
-                    <input type="checkbox" />
-                </td>
-                <td class="col-md-6">
-                    <a href="#">Hola </a>
-                </td>
-                <td class="col-md-2">
-
-                </td>
-                <td class="col-md-5">
-
+                    {{supplier.email }}
                 </td>
                 <td class="col-md-1">
                     <a href="#" > <span class="glyphicon  glyphicon-trash" aria-hidden="true"></span></a>

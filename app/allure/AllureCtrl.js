@@ -1,12 +1,13 @@
 var allureCtrl = angular.module('allureCtrl', []);
 
-allureCtrl.controller('AllureCtrl', ['$scope', 'StartApp', function($scope, StartApp) {
+allureCtrl.controller('AllureCtrl', ['$scope', 'StartApp', '$location',
+    function($scope, StartApp, $location) {
 
     $scope.application = {};
-    $scope.supplier = {};
+    $scope.suppliers = [];
     $scope.customer = {};
 
-    $scope.activeOption = 'Home';
+    $scope.activeOption = '';
 
     $scope.changeMenu = function(option) {
         $scope.activeOption = option;
@@ -14,6 +15,7 @@ allureCtrl.controller('AllureCtrl', ['$scope', 'StartApp', function($scope, Star
 
     $scope.init = function() {
         $scope.application = StartApp.get();
+        $scope.activeOption = $location.$$url;
     };
 
     $scope.init();
