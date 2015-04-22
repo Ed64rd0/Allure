@@ -1,0 +1,140 @@
+<div id="stock-form-content">
+    <h4> Crear componente </h4>
+    <br>
+
+    <form ng-submit="" name="item" id="item-form">
+        <div class="input-group-btn" style="float: right; margin-right: 350px;">
+            <button type="button" class="btn btn-primary">
+                <i class="glyphicon glyphicon-floppy-disk"></i> Guardar
+            </button>
+        </div>
+        <div class="col-md-1">
+            <strong>Nuevo componente: </strong>
+        </div>
+        <div class="col-md-3">
+            <input type="text" ng-model="item.itmName" class="form-control" />
+        </div>
+        <div class="col-md-1">
+            <strong>Stock: </strong>
+        </div>
+        <div class="col-md-1">
+            <input type="number" ng-model="item.itmStock" class="form-control">
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <div class="col-md-1">
+            <strong>Precio de compra: </strong>
+        </div>
+        <div class="col-md-2">
+            <input type="text" ng-model="item.itmPrice" class="form-control" />
+        </div>
+        <div class="col-md-1">
+            <strong>Renta: </strong>
+        </div>
+        <div class="col-md-2">
+            <input type="text" ng-model="item.itmRent" class="form-control" />
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <div class="panel panel-primary panel-address">
+            <div class="panel-heading panel-primary">
+                Tienda
+            </div>
+            <div class="panel-body">
+                <div class="col-md-2">
+                    <strong>Nombre de la tienda: </strong>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" ng-model="store.strName" class="form-control" />
+                </div>
+                <br />
+                <br />
+                <br />
+                <div class="col-md-2">
+                    <strong>Calle y #: </strong>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" ng-model="store.address.strStreet" class="form-control" />
+                </div>
+                <br />
+                <br />
+                <br />
+                <div class="col-md-1">
+                    <strong>Colonia: </strong>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" ng-model="store.address.strColony" class="form-control" />
+                </div>
+                <div class="col-md-1">
+                    <strong>Ciudad: </strong>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" ng-model="store.address.strCity" class="form-control" />
+                </div>
+                <div class="col-md-1">
+                    <strong>Estado: </strong>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" ng-model="store.address.strState" class="form-control" />
+                </div>
+                <br />
+                <br />
+                <br />
+                <div class="col-md-2">
+                    <strong>Telefono: </strong>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" ng-model="store.phone" class="form-control" />
+                </div>
+                <div class="col-md-2">
+                    <strong>Celular: </strong>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" ng-model="store.celphone" class="form-control" />
+                </div>
+                <br />
+                <br />
+                <br />
+                <div class="col-md-2">
+                    <strong>E-mail: </strong>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" ng-model="store.email" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <div class="col-md-2">
+            <strong>Imagen del componente: </strong>
+        </div>
+        <div class="input-group col-md-6">
+            <div tabindex="-1" class="form-control file-caption  kv-fileinput-caption">
+                <span class="file-caption-ellipsis">…</span>
+                <div class="file-caption-name"></div>
+            </div>
+            <div class="input-group-btn">
+                <button type="button" title="Clear selected files" class="btn btn-default fileinput-remove fileinput-remove-button">
+                    <i class="glyphicon glyphicon-trash"></i> Remove
+                </button>
+                <button type="button" title="Abort ongoing upload" class="hide btn btn-default fileinput-cancel fileinput-cancel-button">
+                    <i class="glyphicon glyphicon-ban-circle"></i> Cancel
+                </button>
+                <button type="submit" title="Upload selected files" class="btn btn-default kv-fileinput-upload fileinput-upload-button">
+                    <i class="glyphicon glyphicon-upload"></i> Upload
+                </button>
+                <div class="btn btn-primary btn-file">
+                    <i class="glyphicon glyphicon-folder-open"></i> &nbsp;Browse …
+                    <input id="input-24" type="file" multiple="true" class="">
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
