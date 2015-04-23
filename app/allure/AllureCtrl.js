@@ -6,6 +6,7 @@ allureCtrl.controller('AllureCtrl', ['$scope', 'StartApp', '$location',
     $scope.application = {};
     $scope.suppliers = [];
     $scope.customer = {};
+    $scope.stocks = [];
 
     $scope.activeOption = '';
 

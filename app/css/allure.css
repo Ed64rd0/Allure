@@ -14,7 +14,7 @@
 #delete {
     margin-left: 5px;
 }
-#supplier-content {
+#supplier-content, #stock-content {
     margin-right: 300px;
 }
 #stock-form-content {

@@ -1,2 +1,48 @@
 <h4> Inventario </h4>
 
+<br />
+<div id="options">
+    <a href="#agregarItem" id="add">
+        <span class="glyphicon glyphicon-plus">Agregar</span>
+    </a>
+
+    <a href="#" id="delete">
+        <span class="glyphicon glyphicon-trash">Eliminar</span>
+    </a>
+</div>
+<br />
+<br />
+<div id="stock-content">
+    <table class="table table-striped">
+        <thead
+        <tr>
+            <th class="col-md-1"></th>
+            <th class="col-md-5">Componente/Articulo</th>
+            <th class="col-md-5">Tienda</th>
+            <th class="col-md-1"></th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="stock in stocks" ng-show="stocks.length > 0">
+                <td class="col-md-1">
+                    <input type="checkbox" />
+                </td>
+                <td class="col-md-5">
+                    <a href="#">{{stock.name }}</a>
+                </td>
+                <td class="col-md-5">
+                    {{stock.store.name}}
+                </td>
+                <td class="col-md-1">
+                    <a href="#" > <span class="glyphicon  glyphicon-trash" aria-hidden="true"></span></a>
+                </td>
+            </tr>
+            <tr ng-show="stocks.length == 0">
+                <td colspan="4">
+                    <strong>No hay ningun articulo en el inventario, favor de agregar nuevos articulos</strong>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
