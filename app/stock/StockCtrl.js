@@ -1,6 +1,7 @@
 var stockCtrl = angular.module('stockCtrl', []);
 
-stockCtrl.controller('StockCtrl', ['$scope', function($scope){
+stockCtrl.controller('StockCtrl', ['$scope', 'StockService',
+    function($scope, StockService){
 
-    $scope.test = 1;
+    $scope.stocks = StockService.getStocks();
 }]);
