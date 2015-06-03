@@ -2,9 +2,9 @@
     <h4> Nuevo componente </h4>
     <br>
 
-    <form ng-submit="" name="item" id="item-form">
+    <form ng-controller="StockCtrl" name="item" id="item-form">
         <div class="input-group-btn" style="float: right; margin-right: 350px;">
-            <button type="button" class="btn btn-primary">
+            <button type="button" class="btn btn-primary" ng-click="saveItem()">
                 <i class="glyphicon glyphicon-floppy-disk"></i> Guardar
             </button>
         </div>
@@ -12,13 +12,13 @@
             <strong>Nommbre componente: </strong>
         </div>
         <div class="col-md-3">
-            <input type="text" ng-model="item.itmName" class="form-control" />
+            <input type="text" ng-model="item.itemName" class="form-control" />
         </div>
         <div class="col-md-1">
             <strong>Stock: </strong>
         </div>
         <div class="col-md-1">
-            <input type="number" ng-model="item.itmStock" class="form-control">
+            <input type="number" ng-model="item.itemStock" class="form-control">
         </div>
 
         <br />
@@ -28,13 +28,13 @@
             <strong>Precio de tienda: </strong>
         </div>
         <div class="col-md-2">
-            <input type="text" ng-model="item.itmPrice" class="form-control" />
+            <input type="text" ng-model="item.itemPrice" class="form-control" />
         </div>
         <div class="col-md-1">
             <strong>Precio de Renta: </strong>
         </div>
         <div class="col-md-2">
-            <input type="text" ng-model="item.itmRent" class="form-control" />
+            <input type="text" ng-model="item.itemRent" class="form-control" />
         </div>
 
         <br />
@@ -42,7 +42,7 @@
         <br />
         <br />
 
-        <div class="panel panel-primary panel-address">
+        <!--<div class="panel panel-primary panel-address">
             <div class="panel-heading panel-primary">
                 Tienda
             </div>
@@ -134,7 +134,7 @@
                     <input id="input-24" type="file" multiple="true" class="">
                 </div>
             </div>
-        </div>
+        </div>-->
 
     </form>
 </div>

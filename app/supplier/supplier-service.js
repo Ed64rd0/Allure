@@ -1,4 +1,4 @@
-var supplierService = angular.module('SupplierService', ['ngResource']);
+var supplierService = angular.module('supplier-service', ['ngResource']);
 
 supplierService.factory('Suppliers', ['$resource', function($resource) {
     return $resource('http://localhost:8080/allureWeb/allure/suppliers', {}, {

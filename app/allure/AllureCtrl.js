@@ -3,21 +3,20 @@ var allureCtrl = angular.module('allureCtrl', []);
 allureCtrl.controller('AllureCtrl', ['$scope', 'StartApp', '$location',
     function($scope, StartApp, $location) {
 
-    $scope.application = {};
-    $scope.suppliers = [];
-    $scope.customer = {};
-    $scope.stocks = [];
+        $scope.app = {};
+        $scope.suppliers = [];
+        $scope.customer = {};
+        $scope.stocks = [];
 
-    $scope.activeOption = '';
+        $scope.activeOption = '';
 
-    $scope.changeMenu = function(option) {
-        $scope.activeOption = option;
-    };
+        $scope.changeMenu = function(option) {
+            $scope.activeOption = option;
+        };
 
-    $scope.init = function() {
-        $scope.application = StartApp.get();
-        $scope.activeOption = $location.$$url;
-    };
+        StartApp.get().$promise.then(function(app) {
+            $scope.app = app;
+            $scope.activeOption = $location.$$url;
+        });
 
-    $scope.init();
 }]);

@@ -41,7 +41,7 @@
 
     <div id="left-menu">
         <ul class="nav nav-pills nav-stacked">
-            <li ng-repeat="option in application.menu" ng-class="{active: option.nav === activeOption}">
+            <li ng-repeat="option in app.menu" ng-class="{active: option.nav === activeOption}">
                 <a href="#{{option.nav}}" ng-click="changeMenu(option.nav)">
                     <span ng-class="option.icon" aria-hidden="true"> {{option.label}}</span>
                 </a>
