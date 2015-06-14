@@ -25,6 +25,9 @@ allure.config(['$routeProvider', function($routeProvider) {
         when('/agregarItem', {
             templateUrl: 'stock/add_item.html'
         }).
+        when('/agregarContacto', {
+            templateUrl: 'supplier/add_supplier.html'
+        }).
         otherwise({
             redirectTo: '/home'
         });

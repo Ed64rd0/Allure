@@ -18,8 +18,9 @@
         <tr>
             <th class="col-md-1"></th>
             <th class="col-md-5">Componente/Articulo</th>
-            <th class="col-md-5">Tienda</th>
-            <th class="col-md-1"></th>
+            <th class="col-md-3">Cantidad</th>
+            <th class="col-md-3">Precio de Renta</th>
+            <th class="col-md-2"></th>
         </tr>
         </thead>
         <tbody>
@@ -28,12 +29,15 @@
                     <input type="checkbox" />
                 </td>
                 <td class="col-md-5">
-                    <a href="#">{{stock.name }}</a>
+                    <a href="#">{{stock.itemName }}</a>
                 </td>
-                <td class="col-md-5">
-                    {{stock.store.name}}
+                <td class="col-md-3">
+                    {{stock.itemStock}}
                 </td>
-                <td class="col-md-1">
+                <td class="col-md-3">
+                    {{stock.itemRent}}
+                </td>
+                <td class="col-md-2">
                     <a href="#" > <span class="glyphicon  glyphicon-trash" aria-hidden="true"></span></a>
                 </td>
             </tr>
