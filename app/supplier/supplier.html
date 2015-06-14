@@ -23,7 +23,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="supplier in suppliers">
+            <tr ng-repeat="supplier in suppliers" ng-show="suppliers.length > 0">
                 <td class="col-md-1">
                     <input type="checkbox" />
                 </td>
@@ -38,6 +38,11 @@
                 </td>
                 <td class="col-md-1">
                     <a href="#" > <span class="glyphicon  glyphicon-trash" aria-hidden="true"></span></a>
+                </td>
+            </tr>
+            <tr ng-show="suppliers.length == 0">
+                <td colspan="4">
+                    <strong>No hay ningun contacto, favor de agregar contactos a la agenda</strong>
                 </td>
             </tr>
         </tbody>

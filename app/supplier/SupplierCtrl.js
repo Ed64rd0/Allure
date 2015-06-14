@@ -1,10 +1,15 @@
 var supplierCtrl = angular.module('supplierCtrl', []);
 
-supplierCtrl.controller('SupplierCtrl', ['$scope', 'Suppliers', function($scope, Suppliers){
+supplierCtrl.controller('SupplierCtrl', ['$scope', 'Suppliers', '$location',
+    function($scope, Suppliers, $location){
 
-    $scope.init = function() {
-        $scope.suppliers = Suppliers.get();
-    };
+        if ($location.$$url === '/contactos') {
+            $scope.suppliers = Suppliers.get.get();
+        }
 
-    $scope.init();
+        $scope.saveSupplier = function() {
+            Suppliers.saveSupplier.save($scope.app.supplier, function(app) {
+
+            });
+        };
 }]);
