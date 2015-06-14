@@ -17,9 +17,20 @@
 #supplier-content, #stock-content {
     margin-right: 300px;
 }
-#stock-form-content {
+#stock-form-content, #supplier-form-content {
     margin-left: 50px;
 }
 .panel-address {
     margin-right: 500px;
+}
+.info-margin {
+    margin-top: 2%;
+}
+.address-info, .contact-info {
+    margin-top: 5%;
+}
+.save-button {
+    float: right;
+    margin-top: 3%;
+    margin-right: 25%;
 }
