@@ -26,7 +26,7 @@
         <tbody>
             <tr ng-repeat="stock in stocks" ng-show="stocks.length > 0">
                 <td class="col-md-1">
-                    <input type="checkbox" />
+                    <input type="checkbox" ng-click="addToList(stock.itemId)" />
                 </td>
                 <td class="col-md-5">
                     <a href="#">{{stock.itemName }}</a>

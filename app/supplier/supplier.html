@@ -1,19 +1,23 @@
 <h4>Contactos</h4>
 <br />
+<div id="search-section" class="col-md-8">
+    <input type="text" class="form-control" ng-model="query">
+</div>
 <div id="options">
     <a href="#agregarContacto" id="add">
         <span class="glyphicon glyphicon-plus">Agregar</span>
     </a>
 
-    <a href="#" id="delete">
+    <a href="#" id="delete" ng-click="deleteSuppliers()">
         <span class="glyphicon glyphicon-trash">Eliminar</span>
     </a>
 </div>
 <br />
 <br />
+<br />
 <div id="supplier-content">
     <table class="table table-striped">
-        <thead
+        <thead>
             <tr>
                 <th class="col-md-1"></th>
                 <th class="col-md-5">Nombre</th>
@@ -23,9 +27,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="supplier in suppliers" ng-show="suppliers.length > 0">
+            <tr ng-repeat="supplier in suppliers | filter:query" ng-show="suppliers.length > 0">
                 <td class="col-md-1">
-                    <input type="checkbox" />
+                    <input type="checkbox" ng-click="addToList(supplier.id)"/>
                 </td>
                 <td class="col-md-5">
                     <a href="#">{{supplier.name }} {{supplier.lastName }} {{supplier.scndLstName }} </a>
@@ -37,7 +41,9 @@
                     {{supplier.email }}
                 </td>
                 <td class="col-md-1">
-                    <a href="#" > <span class="glyphicon  glyphicon-trash" aria-hidden="true"></span></a>
+                    <a href="#" ng-click="deleteSupplier(supplier.id)" >
+                        <span class="glyphicon  glyphicon-trash" aria-hidden="true"></span>
+                    </a>
                 </td>
             </tr>
             <tr ng-show="suppliers.length == 0">

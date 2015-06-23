@@ -3,48 +3,53 @@
     <br>
 
     <form ng-controller="StockCtrl" name="item" id="item-form">
+        <div ng-show="message != null" class="bg-danger">
+            <label >{{message}}</label>
+            <br>
+        </div>
         <div class="input-group-btn" style="float: right; margin-right: 350px;">
-            <button type="button" class="btn btn-primary" ng-click="saveItem()">
+            <button type="submit" class="btn btn-primary" ng-click="saveItem()">
                 <i class="glyphicon glyphicon-floppy-disk"></i> Guardar
             </button>
         </div>
-        <div class="col-md-1">
-            <strong>Nommbre componente: </strong>
-        </div>
-        <div class="col-md-3">
-            <input type="text" ng-model="app.item.itemName" class="form-control" />
-        </div>
-        <div class="col-md-1">
-            <strong>Stock: </strong>
-        </div>
-        <div class="col-md-1">
-            <input type="number" ng-model="app.item.itemStock" class="form-control">
+        <div>
+            <div class="col-md-1">
+                <strong>Nommbre componente: </strong>
+            </div>
+            <div class="col-md-3">
+                <input type="text" ng-model="app.item.itemName" class="form-control" required />
+            </div>
+            <div class="col-md-1">
+                <strong>Stock: </strong>
+            </div>
+            <div class="col-md-1">
+                <input type="text" ng-model="app.item.itemStock" class="form-control" only-digits />
+            </div>
+
+            <br />
+            <br />
+            <br />
+            <div class="col-md-1">
+                <strong>Precio de tienda: </strong>
+            </div>
+            <div class="col-md-2">
+                <input type="text" ng-model="app.item.itemPrice" class="form-control"/>
+            </div>
+            <div class="col-md-1">
+                <strong>Precio de Renta: </strong>
+            </div>
+            <div class="col-md-2">
+                <input type="text" ng-model="app.item.itemRent" class="form-control" required/>
+            </div>
         </div>
 
         <br />
         <br />
         <br />
-        <div class="col-md-1">
-            <strong>Precio de tienda: </strong>
-        </div>
-        <div class="col-md-2">
-            <input type="text" ng-model="app.item.itemPrice" class="form-control" />
-        </div>
-        <div class="col-md-1">
-            <strong>Precio de Renta: </strong>
-        </div>
-        <div class="col-md-2">
-            <input type="text" ng-model="app.item.itemRent" class="form-control" />
-        </div>
 
-        <br />
-        <br />
-        <br />
-        <br />
-
-        <!--<div class="panel panel-primary panel-address">
+        <div class="panel panel-primary panel-address">
             <div class="panel-heading panel-primary">
-                Tienda
+                Agregar Tienda
             </div>
             <div class="panel-body">
                 <div class="col-md-2">
@@ -65,22 +70,25 @@
                 <br />
                 <br />
                 <br />
-                <div class="col-md-1">
+                <div class="col-md-2">
                     <strong>Colonia: </strong>
                 </div>
                 <div class="col-md-3">
                     <input type="text" ng-model="store.address.strColony" class="form-control" />
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-2">
                     <strong>Ciudad: </strong>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <input type="text" ng-model="store.address.strCity" class="form-control" />
                 </div>
-                <div class="col-md-1">
+                <br />
+                <br />
+                <br />
+                <div class="col-md-2">
                     <strong>Estado: </strong>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <input type="text" ng-model="store.address.strState" class="form-control" />
                 </div>
                 <br />
@@ -109,7 +117,7 @@
                 </div>
             </div>
         </div>
-
+        <!--
         <br />
         <div class="col-md-2">
             <strong>Imagen del componente: </strong>

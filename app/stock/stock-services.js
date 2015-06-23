@@ -7,6 +7,9 @@ stockService.factory('Stocks', ['$resource', function($resource) {
                 }),
             saveItem : $resource('http://localhost:8080/allureWeb/allure/stocks', {}, {
                     save: { method: 'POST', params: {}, isArray: false }
+                }),
+            deleteItem : $resource('http://localhost:8080/allureWeb/allure/stocks/:itemId', {itemId: '@itemId'}, {
+                    delete: { method: 'DELETE', params: {}, isArray: false}
                 })
             }
         }
