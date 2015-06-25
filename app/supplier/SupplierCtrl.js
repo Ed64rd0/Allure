@@ -23,7 +23,7 @@ supplierCtrl.controller('SupplierCtrl', ['$scope', 'Suppliers', '$location',
         };
 
         $scope.deleteSuppliers = function() {
-            Suppliers.deleteSupplier.delete($scope.listofSuppliers, function(app) {
+            Suppliers.deleteSuppliers.delete($scope.listofSuppliers, function(app) {
                 $location.path('/contactos');
             });
         };

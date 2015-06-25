@@ -31,21 +31,24 @@ stockCtrl.controller('StockCtrl', ['$scope', 'Stocks', '$location',
             } else {
                 return priceRegex.test($scope.app.item.itemRent);
             }
-        }
+        };
 
         $scope.executeSave = function() {
-            Stocks.saveItem.save($scope.app.item, function (app) {
-                $scope.app.item = new Object();
-                $location.path('/inventario');
-            });
-        }
-
+            if ($scope.validStore()) {
+                Stocks.saveItem.save($scope.app.item, function (app) {
+                    $scope.app.item = new Object();
+                    $location.path('/inventario');
+                });
+            } else {
+                $scope.message = "El nombre de la tienda no puede estar vacio si esta proporcionando datos de la tienda.";
+            }
+        };
 
         $scope.deleteItem = function(itemId) {
-            Stocks.deleteItem.delete(itemId, function(app) {
-                $location.$$url == '/inventario';
+            Stocks.deleteItem.delete({itemId: itemId}, function(app) {
+                $location.path('/inventario');
             });
-        }
+        };
 
         $scope.addToList = function(itemId) {
             if ( $scope.listOfStock.indexOf(itemId) >= 0 ) {
@@ -55,5 +58,18 @@ stockCtrl.controller('StockCtrl', ['$scope', 'Stocks', '$location',
                 $scope.listOfStock.push(itemId);
             }
         };
+
+        $scope.validStore = function() {
+            if (($scope.app.item.store.storeAdd == null || $scope.app.item.store.storeCol == null ||
+                $scope.app.item.store.storeCity == null || $scope.app.item.store.storeState == null ||
+                $scope.app.item.store.storePhone == null || $scope.app.item.store.storeCel == null ||
+                $scope.app.item.store.storeEmail == null) ||
+                ($scope.app.item.store.storeAdd != null || $scope.app.item.store.storeCol != null ||
+                $scope.app.item.store.storeCity != null || $scope.app.item.store.storeState != null ||
+                $scope.app.item.store.storePhone != null || $scope.app.item.store.storeCel != null  ||
+                $scope.app.item.store.storeEmail != null)) {
+                    return $scope.app.item.store.storeName != null && $scope.app.item.store.storeName.trim() != '';
+            }
+        }
 
 }]);

@@ -38,7 +38,7 @@
                     {{stock.itemRent}}
                 </td>
                 <td class="col-md-2">
-                    <a href="#" > <span class="glyphicon  glyphicon-trash" aria-hidden="true"></span></a>
+                    <a href="#" ng-click="deleteItem(stock.itemId)" > <span class="glyphicon  glyphicon-trash" aria-hidden="true"></span></a>
                 </td>
             </tr>
             <tr ng-show="stocks.length == 0">
