@@ -98,13 +98,13 @@
                     <strong>Telefono: </strong>
                 </div>
                 <div class="col-md-3">
-                    <input type="text" ng-model="app.item.store.storePhone" class="form-control" />
+                    <input type="text" ng-model="app.item.store.storePhone" class="form-control" only-digits/>
                 </div>
                 <div class="col-md-2">
                     <strong>Celular: </strong>
                 </div>
                 <div class="col-md-3">
-                    <input type="text" ng-model="app.item.store.storeCel" class="form-control" />
+                    <input type="text" ng-model="app.item.store.storeCel" class="form-control" only-digits />
                 </div>
                 <br />
                 <br />
@@ -113,7 +113,7 @@
                     <strong>E-mail: </strong>
                 </div>
                 <div class="col-md-8">
-                    <input type="text" ng-model="app.item.store.storeEmail" class="form-control" />
+                    <input type="email" ng-model="app.item.store.storeEmail" class="form-control" />
                 </div>
             </div>
         </div>

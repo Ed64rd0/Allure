@@ -7,20 +7,20 @@
         <div>
             <label class="col-md-1">Nombre: </label>
             <div class="col-md-4">
-                <input type="text" ng-model="app.supplier.name" class="form-control"  required />
+                <input type="text" ng-model="app.supplier.name" class="form-control"  required different-words />
             </div>
         </div>
         <br>
         <div class="info-margin">
             <label class="col-md-1">Apellido Paterno: </label>
             <div class="col-md-4">
-                <input type="text" ng-model="app.supplier.lastName" class="form-control" required  />
+                <input type="text" ng-model="app.supplier.lastName" class="form-control" required one-word />
             </div>
         </div>
         <div>
             <label class="col-md-1">Apellido Materno: </label>
             <div class="col-md-4">
-                <input type="text" ng-model="app.supplier.scndLstName" class="form-control"  />
+                <input type="text" ng-model="app.supplier.scndLstName" class="form-control" required one-word />
             </div>
         </div>
 
@@ -58,20 +58,20 @@
             <div class="info-margin">
                 <label class="col-md-1">Telefono:  </label>
                 <div class="col-md-4">
-                    <input type="text" ng-model="app.supplier.phone" class="form-control" />
+                    <input type="text" ng-model="app.supplier.phone" class="form-control" only-digits/>
                 </div>
             </div>
             <div>
                 <label class="col-md-1">Celular: </label>
                 <div class="col-md-4">
-                    <input type="text" ng-model="app.supplier.celPhone" class="form-control" />
+                    <input type="text" ng-model="app.supplier.celPhone" class="form-control" only-digits />
                 </div>
             </div>
             <br>
             <div class="info-margin">
                 <label class="col-md-1">E-mail: </label>
                 <div class="col-md-4">
-                    <input type="text" ng-model="app.supplier.email" class="form-control" />
+                    <input type="email" ng-model="app.supplier.email" class="form-control" />
                 </div>
             </div>
         </div>
