@@ -1,0 +1,52 @@
+<h4>Presupuesto</h4>
+
+<p>El siguiente presupuesto es en base a las citas y conversaciones que se han tenido en ellas,
+    por lo que cabe mencionar los precios y el total pueden llegar a tener cambios</p>
+
+<br>
+<form name="estimate">
+    <div>
+        <div>
+            <label class="col-md-1">Nombre: </label>
+            <div class="col-md-4">
+                <input type="text" ng-model="app.supplier.name" class="form-control"  required different-words />
+            </div>
+        </div>
+        <br>
+        <div class="info-margin">
+            <label class="col-md-1">Apellido Paterno: </label>
+            <div class="col-md-4">
+                <input type="text" ng-model="app.supplier.lastName" class="form-control" required one-word />
+            </div>
+        </div>
+        <div>
+            <label class="col-md-1">Apellido Materno: </label>
+            <div class="col-md-4">
+                <input type="text" ng-model="app.supplier.scndLstName" class="form-control" required one-word />
+            </div>
+        </div>
+    </div>
+
+    <div class="event-info">
+        <div class="info-margin">
+            <label class="col-md-1">Tipo de evento: </label>
+            <div class="col-md-2">
+                <select class="form-control" ng-model="app.event.typeId"
+                        ng-options="eventType.value as eventType.label for eventType in app.eventsTypes">
+                </select>
+            </div>
+        </div>
+        <div>
+            <label class="col-md-2">Cantidad de invitados: </label>
+            <div class="col-md-1">
+                <input type="text" ng-model="app.event.guestQuantity" class="form-control"  />
+            </div>
+        </div>
+        <div>
+            <label class="col-md-1">Fecha: </label>
+            <div class="col-md-2">
+                <input type="text" ng-model="app.event.estimateDate" class="form-control"  />
+            </div>
+        </div>
+    </div>
+</form>

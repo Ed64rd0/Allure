@@ -2,6 +2,9 @@ var supplierService = angular.module('supplier-service', ['ngResource']);
 
 supplierService.factory('Suppliers', ['$resource', function($resource) {
     return {
+        getSupplier : $resource('http://localhost:8080/allureWeb/allure/supplier', {}, {
+            get: {method: 'GET', params: {}, isArray: false}
+        }),
         get : $resource('http://localhost:8080/allureWeb/allure/suppliers', {}, {
             get: {method: 'GET', params: {}, isArray: true}
         }),

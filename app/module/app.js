@@ -28,6 +28,9 @@ allure.config(['$routeProvider', function($routeProvider) {
         when('/agregarContacto', {
             templateUrl: 'supplier/add_supplier.html'
         }).
+        when('/estimate', {
+            templateUrl: 'event/estimate.html'
+        }).
         otherwise({
             redirectTo: '/home'
         });

@@ -4,6 +4,7 @@ stockCtrl.controller('StockCtrl', ['$scope', 'Stocks', '$location',
     function($scope, Stocks, $location) {
 
         $scope.stocks;
+        $scope.item;
         $scope.listOfStock = [];
         $scope.message;
         $scope.agregarTienda = false;
@@ -12,7 +13,11 @@ stockCtrl.controller('StockCtrl', ['$scope', 'Stocks', '$location',
             Stocks.getStocks.get( function(app) {
                 $scope.stocks = app;
             });
-        };
+        } else {
+            Stocks.getStock.get( function(app) {
+                $scope.item = app;
+            });
+        }
 
         $scope.saveItem = function() {
             if ( $scope.validatePrices() ) {
@@ -26,17 +31,17 @@ stockCtrl.controller('StockCtrl', ['$scope', 'Stocks', '$location',
 
         $scope.validatePrices = function () {
             var priceRegex = /^[0-9]+(\.[0-9]{1,2})?$/;
-            if ($scope.app.item.itemPrice != undefined ) {
-                return priceRegex.test($scope.app.item.itemPrice) && priceRegex.test($scope.app.item.itemRent);
+            if ($scope.item.itemPrice != undefined ) {
+                return priceRegex.test($scope.item.itemPrice) && priceRegex.test($scope.item.itemRent);
             } else {
-                return priceRegex.test($scope.app.item.itemRent);
+                return priceRegex.test($scope.item.itemRent);
             }
         };
 
         $scope.executeSave = function() {
             if ($scope.validStore()) {
-                Stocks.saveItem.save($scope.app.item, function (app) {
-                    $scope.app.item = new Object();
+                Stocks.saveItem.save($scope.item, function (app) {
+                    $scope.item = new Object();
                     $location.path('/inventario');
                 });
             } else {
@@ -60,15 +65,19 @@ stockCtrl.controller('StockCtrl', ['$scope', 'Stocks', '$location',
         };
 
         $scope.validStore = function() {
-            if (($scope.app.item.store.storeAdd == null || $scope.app.item.store.storeCol == null ||
-                $scope.app.item.store.storeCity == null || $scope.app.item.store.storeState == null ||
-                $scope.app.item.store.storePhone == null || $scope.app.item.store.storeCel == null ||
-                $scope.app.item.store.storeEmail == null) ||
-                ($scope.app.item.store.storeAdd != null || $scope.app.item.store.storeCol != null ||
-                $scope.app.item.store.storeCity != null || $scope.app.item.store.storeState != null ||
-                $scope.app.item.store.storePhone != null || $scope.app.item.store.storeCel != null  ||
-                $scope.app.item.store.storeEmail != null)) {
-                    return $scope.app.item.store.storeName != null && $scope.app.item.store.storeName.trim() != '';
+            if ($scope.item.store.storeAdd == null && $scope.item.store.storeCol == null &&
+                $scope.item.store.storeCity == null && $scope.item.store.storeState == null &&
+                $scope.item.store.storePhone == null && $scope.item.store.storeCel == null &&
+                $scope.item.store.storeEmail == null) {
+                return ($scope.item.store.storeName == null) ||
+                    $scope.item.store.storeName != null && $scope.item.store.storeName.trim() != '';
+            }
+            if (
+                ($scope.item.store.storeAdd != null || $scope.item.store.storeCol != null ||
+                $scope.item.store.storeCity != null || $scope.item.store.storeState != null ||
+                $scope.item.store.storePhone != null || $scope.item.store.storeCel != null  ||
+                $scope.item.store.storeEmail != null)) {
+                    return $scope.item.store.storeName != null && $scope.item.store.storeName.trim() != '';
             }
         }
 

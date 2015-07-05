@@ -7,11 +7,13 @@ supplierCtrl.controller('SupplierCtrl', ['$scope', 'Suppliers', '$location',
 
         if ($location.$$url === '/contactos') {
             $scope.suppliers = Suppliers.get.get();
+        } else {
+            $scope.supplier = Suppliers.getSupplier.get();
         }
 
         $scope.saveSupplier = function() {
-            Suppliers.saveSupplier.save($scope.app.supplier, function(app) {
-                $scope.app.supplier = new Object();
+            Suppliers.saveSupplier.save($scope.supplier, function(app) {
+                $scope.supplier = new Object();
                 $location.path('/contactos');
             });
         };
