@@ -40,3 +40,18 @@
 .event-info {
     margin-top: 6%;
 }
+.panel-event {
+    margin-top: 3%;
+    margin-right: 18%;
+}
+.head-panel {
+    cursor: pointer;
+}
+.move-btns {
+    clear: left;
+    margin-left: 25%;
+}
+.componentsStyle {
+    clear: both;
+    margin-top: 2px;
+}

@@ -1,34 +1,15 @@
 <h4>Presupuesto</h4>
 
+
+
+
 <p>El siguiente presupuesto es en base a las citas y conversaciones que se han tenido en ellas,
     por lo que cabe mencionar los precios y el total pueden llegar a tener cambios</p>
 
 <br>
-<form name="estimate">
+<form ng-controller="EventsCtrl">
     <div>
         <div>
-            <label class="col-md-1">Nombre: </label>
-            <div class="col-md-4">
-                <input type="text" ng-model="app.supplier.name" class="form-control"  required different-words />
-            </div>
-        </div>
-        <br>
-        <div class="info-margin">
-            <label class="col-md-1">Apellido Paterno: </label>
-            <div class="col-md-4">
-                <input type="text" ng-model="app.supplier.lastName" class="form-control" required one-word />
-            </div>
-        </div>
-        <div>
-            <label class="col-md-1">Apellido Materno: </label>
-            <div class="col-md-4">
-                <input type="text" ng-model="app.supplier.scndLstName" class="form-control" required one-word />
-            </div>
-        </div>
-    </div>
-
-    <div class="event-info">
-        <div class="info-margin">
             <label class="col-md-1">Tipo de evento: </label>
             <div class="col-md-2">
                 <select class="form-control" ng-model="app.event.typeId"
@@ -43,10 +24,116 @@
             </div>
         </div>
         <div>
-            <label class="col-md-1">Fecha: </label>
+            <label class="col-md-2">Fecha del Evento: </label>
             <div class="col-md-2">
-                <input type="text" ng-model="app.event.estimateDate" class="form-control"  />
+                <input type="text" ng-model="app.event.eventDate" class="form-control"  />
             </div>
         </div>
     </div>
+
+    <div>
+        <br>
+        <div class="panel panel-primary panel-event">
+            <div class="panel-heading panel-primary head-panel">
+                Informacion del cliente
+            </div>
+            <div class="panel-body">
+
+                <div>
+                    <label class="col-md-1">Nombre: </label>
+                    <div class="col-md-4">
+                        <input type="text" ng-model="app.event.customer.name" class="form-control" different-words />
+                    </div>
+                </div>
+                <br>
+                <div class="info-margin">
+                    <label class="col-md-1">Apellido Paterno: </label>
+                    <div class="col-md-4">
+                        <input type="text" ng-model="app.event.customer.lastName" class="form-control" one-word />
+                    </div>
+                </div>
+                <div>
+                    <label class="col-md-1">Apellido Materno: </label>
+                    <div class="col-md-4">
+                        <input type="text" ng-model="app.event.customer.scndLstName" class="form-control" one-word />
+                    </div>
+                </div>
+
+                <br>
+                <div class="contact-info">
+                    <div class="info-margin">
+                        <label class="col-md-1">Telefono:  </label>
+                        <div class="col-md-4">
+                            <input type="text" ng-model="app.event.customer.phone" class="form-control" only-digits/>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="col-md-1">Celular: </label>
+                        <div class="col-md-4">
+                            <input type="text" ng-model="app.event.customer.celPhone" class="form-control" only-digits />
+                        </div>
+                    </div>
+                    <br>
+                    <div class="info-margin">
+                        <label class="col-md-1">E-mail: </label>
+                        <div class="col-md-4">
+                            <input type="email" ng-model="app.event.customer.email" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="panel panel-primary panel-event">
+            <div class="panel-heading panel-primary head-panel" ng-click="displayMontaje()">
+                Presupuesto
+            </div>
+            <div class="panel-body">
+                <div>
+                    <label class="col-md-2">Componente: </label>
+                    <label class="col-md-2">Cantidad: </label>
+                    <label class="col-md-2">Precio: </label>
+                    <label class="col-md-2">Total por Componente: </label>
+                </div>
+                <br>
+                <div ng-repeat="component in app.event.components" class="componentsStyle">
+                    <div class="col-md-2">
+                        <input type="text" ng-model="component.name" class="form-control">
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" ng-model="component.quantity" class="form-control">
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" ng-model="component.price" class="form-control" />
+                        <input type="hidden" ng-model="component.total" value="{{component.quantity * component.price}}" />
+                    </div>
+                    <div class="col-md-2">
+                        <label class="col-md-2" ng-hide="component.quantity == null && component.price == null">${{component.quantity * component.price}}</label>
+                        <label class="col-md-2" ng-show="component.quantity == null && component.price == null">$0.00</label>
+                    </div>
+                    <br>
+                </div>
+                <br>
+                <div>
+                    <label class="col-md-4">Agregar <input type="number" ng-model="columns" /> columnas</label>
+                    <input type="button" class="btn btn-primary" ng-click="addColumns()" value="Agregar">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="panel panel-primary panel-event">
+            <div class="panel-heading panel-primary head-panel">
+                Comentarios o Notas
+            </div>
+            <div class="panel-body">
+                <textarea ng-model="app.event.note"></textarea>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Continuar</button>
 </form>

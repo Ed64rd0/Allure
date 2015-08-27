@@ -28,7 +28,7 @@ allure.config(['$routeProvider', function($routeProvider) {
         when('/agregarContacto', {
             templateUrl: 'supplier/add_supplier.html'
         }).
-        when('/estimate', {
+        when('/estimacion', {
             templateUrl: 'event/estimate.html'
         }).
         otherwise({
