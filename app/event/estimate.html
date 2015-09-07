@@ -12,7 +12,7 @@
         <div>
             <label class="col-md-1">Tipo de evento: </label>
             <div class="col-md-2">
-                <select class="form-control" ng-model="app.event.typeId"
+                <select class="form-control" ng-model="event.eventType"
                         ng-options="eventType.value as eventType.label for eventType in app.eventsTypes">
                 </select>
             </div>
@@ -20,13 +20,13 @@
         <div>
             <label class="col-md-2">Cantidad de invitados: </label>
             <div class="col-md-1">
-                <input type="text" ng-model="app.event.guestQuantity" class="form-control"  />
+                <input type="text" ng-model="event.guestQuantity" class="form-control"  />
             </div>
         </div>
         <div>
             <label class="col-md-2">Fecha del Evento: </label>
             <div class="col-md-2">
-                <input type="text" ng-model="app.event.eventDate" class="form-control"  />
+                <input type="text" ng-model="event.eventDate" class="form-control"  />
             </div>
         </div>
     </div>
@@ -42,20 +42,20 @@
                 <div>
                     <label class="col-md-1">Nombre: </label>
                     <div class="col-md-4">
-                        <input type="text" ng-model="app.event.customer.name" class="form-control" different-words />
+                        <input type="text" ng-model="event.customer.customerName" class="form-control" different-words />
                     </div>
                 </div>
                 <br>
                 <div class="info-margin">
                     <label class="col-md-1">Apellido Paterno: </label>
                     <div class="col-md-4">
-                        <input type="text" ng-model="app.event.customer.lastName" class="form-control" one-word />
+                        <input type="text" ng-model="event.customer.customerLstNm" class="form-control" one-word />
                     </div>
                 </div>
                 <div>
                     <label class="col-md-1">Apellido Materno: </label>
                     <div class="col-md-4">
-                        <input type="text" ng-model="app.event.customer.scndLstName" class="form-control" one-word />
+                        <input type="text" ng-model="event.customer.customerScndLstNm" class="form-control" one-word />
                     </div>
                 </div>
 
@@ -64,20 +64,20 @@
                     <div class="info-margin">
                         <label class="col-md-1">Telefono:  </label>
                         <div class="col-md-4">
-                            <input type="text" ng-model="app.event.customer.phone" class="form-control" only-digits/>
+                            <input type="text" ng-model="event.customer.customerPhone" class="form-control" only-digits/>
                         </div>
                     </div>
                     <div>
                         <label class="col-md-1">Celular: </label>
                         <div class="col-md-4">
-                            <input type="text" ng-model="app.event.customer.celPhone" class="form-control" only-digits />
+                            <input type="text" ng-model="event.customer.customerCelphone" class="form-control" only-digits />
                         </div>
                     </div>
                     <br>
                     <div class="info-margin">
                         <label class="col-md-1">E-mail: </label>
                         <div class="col-md-4">
-                            <input type="email" ng-model="app.event.customer.email" class="form-control" />
+                            <input type="email" ng-model="event.customer.customerEmail" class="form-control" />
                         </div>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                     <label class="col-md-2">Total por Componente: </label>
                 </div>
                 <br>
-                <div ng-repeat="component in app.event.components" class="componentsStyle">
+                <div ng-repeat="component in event.components" class="componentsStyle">
                     <div class="col-md-2">
                         <input type="text" ng-model="component.name" class="form-control">
                     </div>
